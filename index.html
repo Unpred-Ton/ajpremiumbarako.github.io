@@ -14,7 +14,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
 nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,18,8,0.96);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(184,134,11,0.3)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo-icon{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
+.nav-logo-icon{width:40px;height:40px;background:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--gold);flex-shrink:0}
 .nav-logo-text{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);line-height:1.2}
 .nav-logo-text span{color:var(--gold-light);font-size:11px;font-weight:300;font-family:'Lato',sans-serif;letter-spacing:2px;display:block;text-transform:uppercase}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -25,8 +25,8 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,18,8,0.96);ba
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
 #hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:64px}
-.hero-bg{position:absolute;inset:0;background-image:url('background.png');background-size:cover;background-position:center center;filter:brightness(0.6)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,18,8,0.82) 0%,rgba(26,18,8,0.65) 50%,rgba(26,18,8,0.45) 100%)}
+.hero-bg{position:absolute;inset:0;background-image:url('cover.png');background-size:cover;background-position:center top;filter:brightness(0.55)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,18,8,0.7) 0%,rgba(44,74,46,0.3) 60%,transparent 100%)}
 .hero-content{position:relative;z-index:2;max-width:700px;padding:5rem 5vw 5rem 8vw}
 .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s ease forwards}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--gold)}
@@ -166,8 +166,8 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <body>
 <nav>
   <a href="#hero" class="nav-logo">
-    <div class="nav-logo-icon">&#9749;</div>
-    <div class="nav-logo-text">AJ's Premium Pure Barako<span>Kalinga Province</span></div>
+    <div class="nav-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 8h1a4 4 0 0 1 0 8h-1" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 1v3M10 1v3M14 1v3" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    <div class="nav-logo-text">AJ's Premium Pure Barako</div>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#benefits">Benefits</a></li>
@@ -184,7 +184,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><div class="hero-eyebrow-text">From Kalinga Province</div></div>
+    <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><div class="hero-eyebrow-text">Fresh From Kalinga Province</div></div>
     <h1 class="hero-title">Strong.<br>Bold.<br><span class="accent">Native Brew.</span></h1>
     <p class="hero-subtitle">Tapang at lakas na babalik-balikan.</p>
     <p class="hero-desc">Hindi instant. Totoong kape. Brewed the traditional way for a strong, rich, and satisfying cup. 100% pure Barako &mdash; no additives, no fillers.</p>
@@ -323,7 +323,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   <div class="footer-top">
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fefcf8;">AJ's Premium Pure Barako</div>
-      <div style="color:#b8860b;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:2px;">Kalinga Province</div>
+      
       <div class="footer-tagline">Real Coffee. Real Heritage. Real Good.</div>
     </div>
     <div class="footer-links">
