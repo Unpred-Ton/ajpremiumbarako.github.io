@@ -77,15 +77,15 @@ section{padding:6rem 5vw}
 #products{background:var(--cream);text-align:center}
 .products-intro{max-width:560px;margin:0 auto 3rem;font-size:16px;line-height:1.8;color:var(--text-muted)}
 .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem}
-.product-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:12px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;text-decoration:none;display:block}.product-card .product-img{transition:transform 0.45s ease}.product-card:hover .product-img{transform:scale(1.08)}
-.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(44,74,46,0.15)}
+.product-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:12px;overflow:hidden;display:block;cursor:default}
+.product-card .product-img{transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)}
+.product-card:hover .product-img{transform:scale(1.12)}
 .product-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
 .product-info{padding:1.5rem;text-align:left}
 .product-size{display:inline-block;background:var(--forest);color:var(--white);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:0.75rem}
 .product-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:0.4rem}
 .product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:1rem}
-.product-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:1px}
-.product-link svg{width:14px;height:14px}
+
 .products-cta{margin-top:3rem}
 #brew{background:var(--forest)}
 #brew .eyebrow-text{color:var(--gold-light)}
@@ -175,7 +175,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <li><a href="#products">Our Coffee</a></li>
     <li><a href="#brew">How to Brew</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://shopee.ph/zoiestore21" target="_blank" class="nav-cta">&#128722; Buy on Shopee</a></li>
+    <li><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="nav-cta">&#128722; Buy on Shopee</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
@@ -189,7 +189,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <p class="hero-subtitle">Tapang at lakas na babalik-balikan.</p>
     <p class="hero-desc">Hindi instant. Totoong kape. Brewed the traditional way for a strong, rich, and satisfying cup. 100% pure Barako &mdash; no additives, no fillers.</p>
     <div class="hero-btns">
-      <a href="https://shopee.ph/zoiestore21" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
+      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
       <a href="#story" class="btn-secondary">Our Story &darr;</a>
     </div>
   </div>
@@ -252,26 +252,26 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <section id="products">
   <div class="section-eyebrow reveal" style="justify-content:center"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Coffee</div><div class="eyebrow-line"></div></div>
   <h2 class="section-title reveal">Choose Your<br><em>Perfect Size.</em></h2>
-  <p class="products-intro reveal">Available in three sizes to suit your needs. All variants are 100% pure Barako &mdash; strong, bold, and brewed the traditional way. Check our Shopee store for pricing and orders.</p>
+  <p class="products-intro reveal">Available in four sizes to suit your needs. All variants are 100% pure Barako &mdash; strong, bold, and brewed the traditional way. Check our Shopee store for pricing and orders.</p>
   <div class="products-grid">
-    <a href="https://shopee.ph/zoiestore21" target="_blank" class="product-card reveal">
+    <div class="product-card reveal">
       <img src="250g.png" alt="AJ's Premium Pure Barako 250g" class="product-img">
-      <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div><div class="product-link">Order on Shopee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div>
-    </a>
-    <a href="https://shopee.ph/zoiestore21" target="_blank" class="product-card reveal">
+      <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div></div>
+    </div>
+    <div class="product-card reveal">
       <img src="500g.png" alt="AJ's Premium Pure Barako 500g" class="product-img">
-      <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div><div class="product-link">Order on Shopee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div>
-    </a>
-    <a href="https://shopee.ph/zoiestore21" target="_blank" class="product-card reveal">
-    <a href="https://shopee.ph/zoiestore21" target="_blank" class="product-card reveal">
+      <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div></div>
+    </div>
+    <div class="product-card reveal">
       <img src="750g.png" alt="AJ's Premium Pure Barako 750g" class="product-img">
-      <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div><div class="product-link">Order on Shopee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div>
-    </a>
+      <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div></div>
+    </div>
+    <div class="product-card reveal">
       <img src="1kg.png" alt="AJ's Premium Pure Barako 1kg" class="product-img">
-      <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div><div class="product-link">Order on Shopee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div>
-    </a>
+      <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div></div>
+    </div>
   </div>
-  <div class="products-cta reveal"><a href="https://shopee.ph/zoiestore21" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
+  <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
 </section>
 
 <section id="brew">
