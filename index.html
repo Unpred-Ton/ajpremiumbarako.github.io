@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231a1208'/%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23d4a017' stroke-width='2'/%3E%3Cpath d='M20 26h24v16a6 6 0 01-6 6H26a6 6 0 01-6-6V26z' fill='none' stroke='%23d4a017' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M44 30h3a5 5 0 010 10h-3' fill='none' stroke='%23d4a017' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M26 20q-2-3 0-6' fill='none' stroke='%23d4a017' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M32 20q-2-3 0-6' fill='none' stroke='%23d4a017' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M38 20q-2-3 0-6' fill='none' stroke='%23d4a017' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AJ's Premium Pure Barako — From the Highlands of Kalinga</title>
 <meta name="description" content="100% pure Barako coffee from Kalinga Province. Strong, bold, native brew. No additives. No fillers.">
@@ -169,38 +170,6 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .footer-trust{text-align:center;padding:2rem 5vw;border-top:1px solid rgba(184,134,11,0.12);border-bottom:1px solid rgba(184,134,11,0.12);margin-bottom:0}
 .footer-trust-tagline{font-family:'Dancing Script',cursive;font-size:1.35rem;color:rgba(245,240,232,0.7);margin-bottom:0.6rem}
 .footer-trust-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,134,11,0.6);font-weight:700}
-
-.retail-badge {
-  position: absolute;
-  top: 10px; left: 10px;
-  background: var(--forest);
-  color: var(--gold-light);
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(212,160,23,0.4);
-  z-index: 2;
-}
-.retail-note {
-  font-size: 11px;
-  color: var(--gold);
-  font-style: italic;
-  margin-top: 4px;
-  font-weight: 600;
-}
-.product-card {
-  position: relative;
-}
-.product-img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.product-card:hover .product-img { transform: scale(1.08); }
 </style>
 </head>
 <body>
@@ -215,7 +184,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <li><a href="#products">Our Coffee</a></li>
     <li><a href="#brew">How to Brew</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D/" target="_blank" class="nav-cta">&#128722; Buy on Shopee</a></li>
+    <li><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="nav-cta">&#128722; Buy on Shopee</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
@@ -229,7 +198,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <p class="hero-subtitle">Tapang at lakas na babalik-balikan.</p>
     <p class="hero-desc">Hindi instant. Totoong kape. Brewed the traditional way for a strong, rich, and satisfying cup. 100% pure Barako &mdash; no additives, no fillers.</p>
     <div class="hero-btns">
-      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D/" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
+      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
       <a href="#story" class="btn-secondary">Our Story &darr;</a>
     </div>
   </div>
@@ -292,128 +261,40 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <section id="products">
   <div class="section-eyebrow reveal" style="justify-content:center"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Coffee</div><div class="eyebrow-line"></div></div>
   <h2 class="section-title reveal">Choose Your<br><em>Perfect Size.</em></h2>
-  <p class="products-intro reveal">Available in six sizes. The 50g and 100g are exclusively available at our partner retail stores. The 250g, 500g, 750g, and 1kg are available online via Shopee.</p>
+  <p class="products-intro reveal">Available in four sizes to suit your needs. All variants are 100% pure Barako &mdash; strong, bold, and brewed the traditional way. Check our Shopee store for pricing and orders.</p>
   <div class="products-carousel reveal" id="productCarousel">
     <div class="carousel-track" id="carouselTrack">
       <div class="product-card">
-        <div class="retail-badge">🏪 In-Store Only</div>
-        <img src="50g.png" alt="AJ's Premium Pure Barako 50g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">50g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Our smallest pack — perfect for first-time buyers. Try the real Barako experience.</div>
-          <div class="retail-note">Available in partner retail stores only</div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="retail-badge">🏪 In-Store Only</div>
-        <img src="100g.png" alt="AJ's Premium Pure Barako 100g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">100g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">A great taster size. Strong, bold, and made for true coffee lovers.</div>
-          <div class="retail-note">Available in partner retail stores only</div>
-        </div>
-      </div>
-      <div class="product-card">
-        
         <img src="250g.png" alt="AJ's Premium Pure Barako 250g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">250g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Perfect starter pack. Strong, bold, and satisfying — ideal for personal daily use.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="500g.png" alt="AJ's Premium Pure Barako 500g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">500g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="750g.png" alt="AJ's Premium Pure Barako 750g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">750g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="1kg.png" alt="AJ's Premium Pure Barako 1kg" class="product-img">
-        <div class="product-info">
-          <div class="product-size">1kg</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div></div>
       </div>
       <div class="product-card">
-        <div class="retail-badge">🏪 In-Store Only</div>
-        <img src="50g.png" alt="AJ's Premium Pure Barako 50g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">50g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Our smallest pack — perfect for first-time buyers. Try the real Barako experience.</div>
-          <div class="retail-note">Available in partner retail stores only</div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="retail-badge">🏪 In-Store Only</div>
-        <img src="100g.png" alt="AJ's Premium Pure Barako 100g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">100g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">A great taster size. Strong, bold, and made for true coffee lovers.</div>
-          <div class="retail-note">Available in partner retail stores only</div>
-        </div>
-      </div>
-      <div class="product-card">
-        
         <img src="250g.png" alt="AJ's Premium Pure Barako 250g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">250g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Perfect starter pack. Strong, bold, and satisfying — ideal for personal daily use.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="500g.png" alt="AJ's Premium Pure Barako 500g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">500g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="750g.png" alt="AJ's Premium Pure Barako 750g" class="product-img">
-        <div class="product-info">
-          <div class="product-size">750g</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div></div>
       </div>
       <div class="product-card">
-        
         <img src="1kg.png" alt="AJ's Premium Pure Barako 1kg" class="product-img">
-        <div class="product-info">
-          <div class="product-size">1kg</div>
-          <div class="product-name">AJ's Premium Pure Barako</div>
-          <div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div>
-          
-        </div>
+        <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div></div>
       </div>
     </div>
   </div>
