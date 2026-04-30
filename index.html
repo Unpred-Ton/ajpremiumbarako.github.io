@@ -170,6 +170,33 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .footer-trust{text-align:center;padding:2rem 5vw;border-top:1px solid rgba(184,134,11,0.12);border-bottom:1px solid rgba(184,134,11,0.12);margin-bottom:0}
 .footer-trust-tagline{font-family:'Dancing Script',cursive;font-size:1.35rem;color:rgba(245,240,232,0.7);margin-bottom:0.6rem}
 .footer-trust-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,134,11,0.6);font-weight:700}
+
+.brew-intro{font-size:16px;color:var(--text-muted);line-height:1.8;max-width:640px;margin-bottom:2rem}
+.brew-tabs{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.brew-tab{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 18px;background:var(--cream-dark);border:1.5px solid transparent;border-radius:8px;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif;min-width:90px}
+.brew-tab:hover{border-color:var(--forest);background:var(--white)}
+.brew-tab.active{background:var(--forest);border-color:var(--forest);box-shadow:0 4px 16px rgba(44,74,46,0.25)}
+.brew-tab-icon{font-size:1.4rem}
+.brew-tab-label{font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;line-height:1.3;color:var(--text-muted)}
+.brew-tab.active .brew-tab-label{color:var(--white)}
+.brew-panels{width:100%}
+.brew-panel{display:none}
+.brew-panel.active{display:block}
+.brew-panel-img{width:100%;max-width:700px;display:block;margin:0 auto;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.brew-note-text{margin-top:1.5rem;font-size:14px;color:var(--text-muted);padding:1rem 1.5rem;background:var(--cream-dark);border-radius:6px;border-left:3px solid var(--forest);max-width:640px}
+.products-sublabel{display:flex;align-items:center;gap:1rem;margin:1.5rem 0 1rem;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--forest);font-weight:700}
+.sublabel-line{flex:1;height:1px;background:var(--cream-dark)}
+.retail-section{margin-top:1rem}
+.retail-section-desc{font-size:15px;color:var(--text-muted);line-height:1.8;max-width:600px;margin:1rem 0 2rem}
+.retail-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:700px}
+.retail-card{background:var(--white);border:2px solid var(--forest);border-radius:12px;overflow:hidden;position:relative}
+.retail-store-badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--forest);color:var(--gold-light);font-size:11px;font-weight:700;letter-spacing:0.5px;padding:5px 12px;border-radius:4px;border:1px solid rgba(212,160,23,0.4)}
+.retail-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.retail-availability{font-size:12px;color:var(--forest);font-weight:700;margin-top:6px}
+.retail-cta-note{margin-top:2rem;font-size:14px;color:var(--text-muted);padding:1rem 1.5rem;background:var(--cream-dark);border-radius:6px;border-left:3px solid var(--gold);max-width:600px}
+.retail-fb-link{color:var(--forest);font-weight:700;text-decoration:underline}
+.retail-fb-link:hover{color:var(--forest-light)}
+@media(max-width:768px){.brew-tab{min-width:75px;padding:10px 10px}.retail-cards{grid-template-columns:1fr;max-width:360px}}
 </style>
 </head>
 <body>
@@ -261,62 +288,51 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <section id="products">
   <div class="section-eyebrow reveal" style="justify-content:center"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Coffee</div><div class="eyebrow-line"></div></div>
   <h2 class="section-title reveal">Choose Your<br><em>Perfect Size.</em></h2>
-  <p class="products-intro reveal">Available in four sizes to suit your needs. All variants are 100% pure Barako &mdash; strong, bold, and brewed the traditional way. Check our Shopee store for pricing and orders.</p>
+  <p class="products-intro reveal">Available in six sizes. Order online via Shopee or visit our partner retail stores.</p>
+  <div class="products-sublabel reveal"><div class="sublabel-line"></div><span>&#128722; Available Online via Shopee</span><div class="sublabel-line"></div></div>
   <div class="products-carousel reveal" id="productCarousel">
     <div class="carousel-track" id="carouselTrack">
-      <div class="product-card">
-        <img src="250g.png" alt="AJ's Premium Pure Barako 250g" class="product-img">
-        <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="500g.png" alt="AJ's Premium Pure Barako 500g" class="product-img">
-        <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="750g.png" alt="AJ's Premium Pure Barako 750g" class="product-img">
-        <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="1kg.png" alt="AJ's Premium Pure Barako 1kg" class="product-img">
-        <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="250g.png" alt="AJ's Premium Pure Barako 250g" class="product-img">
-        <div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack. Strong, bold, and satisfying &mdash; ideal for personal daily use.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="500g.png" alt="AJ's Premium Pure Barako 500g" class="product-img">
-        <div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers. More value, same bold quality.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="750g.png" alt="AJ's Premium Pure Barako 750g" class="product-img">
-        <div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers. Great value for the whole household.</div></div>
-      </div>
-      <div class="product-card">
-        <img src="1kg.png" alt="AJ's Premium Pure Barako 1kg" class="product-img">
-        <div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value for coffee lovers. Bulk size for the household or gifting.</div></div>
-      </div>
+      <div class="product-card"><img src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
+      <div class="product-card"><img src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
+      <div class="product-card"><img src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
+      <div class="product-card"><img src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
+      <div class="product-card"><img src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
+      <div class="product-card"><img src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
+      <div class="product-card"><img src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
+      <div class="product-card"><img src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
     </div>
   </div>
   <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
+  <div class="retail-section reveal">
+    <div class="products-sublabel" style="margin-top:3.5rem;"><div class="sublabel-line"></div><span>&#127978; Exclusively at Partner Retail Stores</span><div class="sublabel-line"></div></div>
+    <p class="retail-section-desc">Our 50g and 100g trial sizes are exclusively available at our partner retail stores in Quirino Province. Perfect for first-time buyers who want to experience the real Barako flavor before ordering online.</p>
+    <div class="retail-cards">
+      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img src="50g.png" alt="50g" class="retail-card-img"><div class="product-info"><div class="product-size">50g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Our smallest pack &mdash; perfect for first-time buyers wanting to try the real Barako experience.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
+      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img src="100g.png" alt="100g" class="retail-card-img"><div class="product-info"><div class="product-size">100g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">A great taster size for true coffee lovers who want to try before ordering online.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
+    </div>
+    <div class="retail-cta-note">Want to find our partner stores? &nbsp;<a href="https://www.facebook.com/profile.php?id=61577448251116" target="_blank" class="retail-fb-link">Message us on Facebook</a>&nbsp; and we'll direct you to the nearest one.</div>
+  </div>
 </section>
 
 <section id="brew">
-  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Traditional Brewing</div></div>
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Brewing Methods</div></div>
   <h2 class="section-title reveal">How to Brew<br><em>the Right Way.</em></h2>
-  <div class="brew-layout">
-    <div class="brew-steps">
-      <div class="brew-step reveal"><div class="step-num">01</div><div class="step-content"><div class="step-title">Boil the Water</div><div class="step-desc">Bring fresh, clean water to a full boil. Use filtered water for the best taste.</div></div></div>
-      <div class="brew-step reveal"><div class="step-num">02</div><div class="step-content"><div class="step-title">Add Coffee</div><div class="step-desc">Add 1&ndash;2 tablespoons of ground Barako per cup. Adjust to your preferred strength.</div></div></div>
-      <div class="brew-step reveal"><div class="step-num">03</div><div class="step-content"><div class="step-title">Boil Together</div><div class="step-desc">Boil the coffee in the water for 2&ndash;3 minutes. This is what brings out the strong, bold flavor.</div></div></div>
-      <div class="brew-step reveal"><div class="step-num">04</div><div class="step-content"><div class="step-title">Strain &amp; Serve</div><div class="step-desc">Pour through a strainer before drinking. Enjoy hot and savor the full aroma.</div></div></div>
-    </div>
-    <div class="brew-tip reveal">
-      <div class="brew-tip-label">Important Note</div>
-      <p class="brew-tip-text">This is <strong style="color:#d4a017;">not instant coffee</strong>. AJ's Premium Pure Barako is a traditional ground coffee that requires boiling and straining. The extra step is worth it &mdash; you'll taste the difference immediately.</p>
-      <p class="brew-tip-note">Paraang ng Pagtimpla: Magpakulo ng tubig &rarr; Maglagay ng 1&ndash;2 kutsara kada tasa &rarr; Pakuluan ng 2&ndash;3 minuto &rarr; Salain bago inumin.</p>
-    </div>
+  <p class="brew-intro reveal">AJ's Premium Pure Barako works beautifully with multiple brewing methods. Choose your style &mdash; each brings out a unique character of the bold Barako flavor.</p>
+  <div class="brew-tabs reveal">
+    <button class="brew-tab active" onclick="switchBrew(0)"><span class="brew-tab-icon">&#128293;</span><span class="brew-tab-label">Traditional<br>Boiling</span></button>
+    <button class="brew-tab" onclick="switchBrew(1)"><span class="brew-tab-icon">&#9749;</span><span class="brew-tab-label">French<br>Press</span></button>
+    <button class="brew-tab" onclick="switchBrew(2)"><span class="brew-tab-icon">&#128167;</span><span class="brew-tab-label">Pour<br>Over</span></button>
+    <button class="brew-tab" onclick="switchBrew(3)"><span class="brew-tab-icon">&#9878;</span><span class="brew-tab-label">Drip Coffee<br>Maker</span></button>
+    <button class="brew-tab" onclick="switchBrew(4)"><span class="brew-tab-icon">&#127355;</span><span class="brew-tab-label">Espresso<br>Machine</span></button>
   </div>
+  <div class="brew-panels reveal">
+    <div class="brew-panel active"><img src="Boiling_process.png" alt="Traditional Boiling" class="brew-panel-img"></div>
+    <div class="brew-panel"><img src="French_Press.png" alt="French Press" class="brew-panel-img"></div>
+    <div class="brew-panel"><img src="Pour_Over.png" alt="Pour Over" class="brew-panel-img"></div>
+    <div class="brew-panel"><img src="Drip_coffee.png" alt="Drip Coffee Maker" class="brew-panel-img"></div>
+    <div class="brew-panel"><img src="Expresso_Machine.png" alt="Espresso Machine" class="brew-panel-img"></div>
+  </div>
+  <p class="brew-note-text reveal">&#11088; <strong>Recommended:</strong> Traditional Boiling is the classic way to enjoy AJ's Premium Pure Barako &mdash; bold, strong, and authentic.</p>
 </section>
 
 <section id="compare">
@@ -377,6 +393,10 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 
 <script>
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+function switchBrew(idx){
+  document.querySelectorAll('.brew-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.brew-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+}
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
