@@ -197,6 +197,37 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .retail-fb-link{color:var(--forest);font-weight:700;text-decoration:underline}
 .retail-fb-link:hover{color:var(--forest-light)}
 @media(max-width:768px){.brew-tab{min-width:75px;padding:10px 10px}.retail-cards{grid-template-columns:1fr;max-width:360px}}
+
+#about{background:var(--dark);padding:0;overflow:hidden}
+.about-hero{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-photos{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.about-photo{overflow:hidden;position:relative}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(0.45)}
+.about-photo:first-child img{object-position:center center}
+.about-photos-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,18,8,0.3) 0%,rgba(26,18,8,0.7) 60%,var(--dark) 100%)}
+.about-hero-content{position:relative;z-index:2;text-align:center;padding:5rem 5vw 4rem}
+.about-hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:1rem}
+.about-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.about-hero-title em{color:var(--gold-light);font-style:italic}
+.about-hero-script{font-family:'Dancing Script',cursive;font-size:clamp(1.3rem,2.5vw,1.8rem);color:rgba(245,240,232,0.75);margin-top:0.5rem}
+.about-body{padding:3rem 5vw 5rem;max-width:860px;margin:0 auto;text-align:center}
+.about-story p{font-size:16px;line-height:1.95;color:rgba(245,240,232,0.78);font-weight:300;margin-bottom:1.4rem}
+.about-story p:last-child{margin-bottom:0}
+.about-story strong{color:var(--gold-light);font-weight:700}
+.about-divider{display:flex;align-items:center;gap:16px;margin:2.5rem auto;max-width:300px}
+.about-divider-line{flex:1;height:1px;background:rgba(184,134,11,0.3)}
+.about-divider-icon{color:var(--gold);font-size:16px}
+.about-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:3rem}
+.about-pillar{padding:1.5rem 1rem;border:1px solid rgba(184,134,11,0.2);border-radius:8px;background:rgba(255,255,255,0.03);text-align:center;transition:border-color 0.2s,background 0.2s}
+.about-pillar:hover{border-color:rgba(184,134,11,0.5);background:rgba(255,255,255,0.06)}
+.about-pillar-icon{font-size:1.8rem;margin-bottom:0.75rem}
+.about-pillar-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:0.5rem}
+.about-pillar-desc{font-size:13px;color:rgba(245,240,232,0.6);line-height:1.6}
+@media(max-width:768px){
+  .about-photos{grid-template-columns:1fr 1fr}
+  .about-hero{min-height:380px}
+  .about-pillars{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -207,7 +238,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#story">Our Story</a></li>
+    <li><a href="#story">Our Story</a><a href="#about">About Us</a></li>
     <li><a href="#products">Our Coffee</a></li>
     <li><a href="#brew">How to Brew</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -284,6 +315,53 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     </div>
   </div>
 </section>
+
+<section id="about">
+  <div class="about-hero">
+    <div class="about-photos">
+      <div class="about-photo"><img src="Family_photo_1.png" alt="The family behind AJ's Barako"></div>
+      <div class="about-photo"><img src="Family_photo_2.png" alt="The family behind AJ's Barako"></div>
+    </div>
+    <div class="about-photos-overlay"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-eyebrow reveal">The People Behind the Brew</div>
+      <h2 class="about-hero-title reveal">Named After Her.<br><em>Built for Her.</em></h2>
+      <div class="about-hero-script reveal">"She didn't know it yet — but she already had a brand."</div>
+    </div>
+  </div>
+  <div class="about-body">
+    <div class="about-story reveal">
+      <p>This is us — a small family from the highlands and lowlands of northern Luzon, with one big dream and one tiny reason to chase it.</p>
+      <p>He's a <strong>licensed pharmacist</strong> and a coffee enthusiast who takes his beans as seriously as his prescriptions. She's a <strong>native of Kalinga Province</strong>, where coffee has been part of the culture long before it became a trend. She didn't just grow up near the farms &mdash; she grew up knowing them.</p>
+      <p>And then there's <strong><em>AJ</em></strong> &mdash; their daughter, the smallest of the three, and honestly the whole point of this. The brand carries her initials. The shop is named after her cousin <strong>Zoie</strong>, who gave her the nickname "AJ" before she could even say it herself.</p>
+      <p>No grand mission statement. Just a family that loves good coffee, knows where it comes from, and figured &mdash; why not share it?</p>
+    </div>
+    <div class="about-divider reveal"><div class="about-divider-line"></div><div class="about-divider-icon">☕</div><div class="about-divider-line"></div></div>
+    <div class="about-pillars reveal">
+      <div class="about-pillar">
+        <div class="about-pillar-icon">🌿</div>
+        <div class="about-pillar-title">The Roots</div>
+        <div class="about-pillar-desc">Native Kalinga highlands — generations of coffee farming tradition running through the family.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">⚗️</div>
+        <div class="about-pillar-title">The Science</div>
+        <div class="about-pillar-desc">A licensed pharmacist who understands coffee beyond the cup — purity, quality, and what goes into every bag.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">👶</div>
+        <div class="about-pillar-title">The Name</div>
+        <div class="about-pillar-desc">Named after little AJ — every bag carries her initials, and every sale is one more reason to keep going.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">❤️</div>
+        <div class="about-pillar-title">The Why</div>
+        <div class="about-pillar-desc">Real coffee. Real family. Something worth building, sharing, and passing down.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section id="products">
   <div class="section-eyebrow reveal" style="justify-content:center"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Coffee</div><div class="eyebrow-line"></div></div>
@@ -374,7 +452,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     </div>
     <div class="footer-links">
       <a href="#benefits">Benefits</a>
-      <a href="#story">Our Story</a>
+      <a href="#story">Our Story</a><a href="#about">About Us</a>
       <a href="#products">Our Coffee</a>
       <a href="#brew">How to Brew</a>
       <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank">Buy on Shopee</a>
