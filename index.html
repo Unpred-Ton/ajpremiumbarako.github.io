@@ -107,7 +107,7 @@ section{padding:6rem 5vw}
 .product-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:1px}
 .product-link svg{width:14px;height:14px}
 .products-cta{margin-top:3rem}
-#brew{background:var(--forest)}
+#brew{background:var(--forest);text-align:center}
 #brew .eyebrow-text{color:var(--gold-light)}
 #brew .eyebrow-line{background:var(--gold-light)}
 #brew .section-title{color:var(--white)}
@@ -186,8 +186,8 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .footer-trust-tagline{font-family:'Dancing Script',cursive;font-size:1.35rem;color:rgba(245,240,232,0.7);margin-bottom:0.6rem}
 .footer-trust-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,134,11,0.6);font-weight:700}
 
-.brew-intro{font-size:16px;color:var(--text-muted);line-height:1.8;max-width:640px;margin-bottom:2rem}
-.brew-tabs{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.brew-intro{font-size:16px;color:var(--text-muted);line-height:1.8;max-width:640px;margin:0 auto 2rem;text-align:center}
+.brew-tabs{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem;justify-content:center}
 .brew-tab{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 18px;background:var(--cream-dark);border:1.5px solid transparent;border-radius:8px;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif;min-width:90px}
 .brew-tab:hover{border-color:var(--forest);background:var(--white)}
 .brew-tab.active{background:var(--forest);border-color:var(--forest);box-shadow:0 4px 16px rgba(44,74,46,0.25)}
@@ -198,7 +198,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .brew-panel{display:none}
 .brew-panel.active{display:block}
 .brew-panel-img{width:100%;max-width:700px;display:block;margin:0 auto;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
-.brew-note-text{margin-top:1.5rem;font-size:14px;color:var(--text-muted);padding:1rem 1.5rem;background:var(--cream-dark);border-radius:6px;border-left:3px solid var(--forest);max-width:640px}
+.brew-note-text{margin-top:1.5rem;font-size:14px;color:var(--text-muted);padding:1rem 1.5rem;background:var(--cream-dark);border-radius:6px;border-left:3px solid var(--forest);max-width:640px;margin-left:auto;margin-right:auto;text-align:left}
 .products-sublabel{display:flex;align-items:center;gap:1rem;margin:1.5rem 0 1rem;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--forest);font-weight:700}
 .sublabel-line{flex:1;height:1px;background:var(--cream-dark)}
 .retail-section{margin-top:1rem}
@@ -757,11 +757,11 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">Is this instant coffee? <span class="faq-icon">+</span></button>
-      <div class="faq-answer"><div class="faq-answer-inner"><strong>No — this is 100% pure ground coffee.</strong> AJ's Premium Pure Barako is not instant. It's traditionally brewed by boiling or using a French press, drip maker, or pour over. The real way. The good way.</div></div>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>No — this is 100% pure ground coffee.</strong> AJ's Premium Pure Barako is not instant. It's traditionally brewed by boiling or using a French press, drip coffee maker, espresso machine, or pour over. The real way. The good way.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">How do I brew it? <span class="faq-icon">+</span></button>
-      <div class="faq-answer"><div class="faq-answer-inner">The classic way is <strong>traditional boiling</strong> — add 1–2 tbsp per cup of water, boil gently for 2–3 minutes, rest, then strain. You can also use a French press, drip coffee maker, or pour over. Check our <a href="#brew" style="color:var(--forest);font-weight:700;">How to Brew</a> section for full guides.</div></div>
+      <div class="faq-answer"><div class="faq-answer-inner">The classic way is <strong>traditional boiling</strong> — add 1–2 tbsp per cup of water, boil gently for 2–3 minutes, rest, then strain. You can also use a French press, drip coffee maker, espresso machine, or pour over. Check our <a href="#brew" style="color:var(--forest);font-weight:700;">How to Brew</a> section for full guides.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">Do you ship nationwide? <span class="faq-icon">+</span></button>
