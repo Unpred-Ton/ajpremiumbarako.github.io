@@ -26,7 +26,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,18,8,0.96);ba
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
 #hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:64px}
-.hero-bg{position:absolute;inset:0;background-image:url('background.png');background-size:cover;background-position:center center;filter:brightness(0.35)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(44,74,46,0.18) 0%,rgba(26,18,8,0) 70%),var(--dark)}
 .hero-overlay{position:absolute;inset:0;background:rgba(15,10,5,0.78)}
 .hero-content{position:relative;z-index:2;max-width:700px;padding:5rem 5vw 5rem 8vw}
 .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s ease forwards}
@@ -227,6 +227,76 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   .about-photos{grid-template-columns:1fr 1fr}
   .about-hero{min-height:380px}
 }
+
+/* ── Stats Bar ── */
+.stats-bar{background:var(--forest);padding:3.5rem 5vw;border-top:1px solid rgba(184,134,11,0.3);border-bottom:1px solid rgba(184,134,11,0.3)}
+.stats-bar-inner{display:flex;align-items:center;justify-content:center;gap:0;max-width:900px;margin:0 auto;flex-wrap:wrap}
+.stat-item{flex:1;min-width:200px;text-align:center;padding:1.5rem 2rem;position:relative}
+.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(184,134,11,0.35)}
+.stat-number{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:900;color:var(--white);line-height:1;margin-bottom:0.4rem;display:flex;align-items:baseline;justify-content:center;gap:4px}
+.stat-suffix{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--gold-light);font-weight:700}
+.stat-label{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,240,232,0.6);font-weight:600}
+.stat-icon{font-size:1.4rem;margin-bottom:0.5rem;display:block}
+/* Reseller CTA strip */
+.reseller-strip{background:linear-gradient(135deg,rgba(26,18,8,0.95),rgba(45,30,10,0.98));border-top:1px solid rgba(184,134,11,0.25);border-bottom:1px solid rgba(184,134,11,0.25);padding:1.5rem 5vw}
+.reseller-strip-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.reseller-text{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.reseller-badge{background:rgba(184,134,11,0.15);border:1px solid rgba(184,134,11,0.4);color:var(--gold-light);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:4px 12px;border-radius:50px;white-space:nowrap}
+.reseller-msg{font-size:14px;color:rgba(245,240,232,0.75);line-height:1.5}
+.reseller-msg strong{color:var(--white)}
+.reseller-actions{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
+.reseller-btn-call{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-size:13px;font-weight:700;padding:10px 20px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:background 0.2s}
+.reseller-btn-call:hover{background:var(--gold-light)}
+.reseller-btn-msg{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(184,134,11,0.5);color:var(--gold-light);font-size:13px;font-weight:600;padding:10px 20px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:all 0.2s}
+.reseller-btn-msg:hover{background:rgba(184,134,11,0.1);border-color:var(--gold)}
+@media(max-width:640px){
+  .stat-item:not(:last-child)::after{display:none}
+  .stat-item{padding:1.2rem 1rem;min-width:140px}
+  .reseller-strip-inner{flex-direction:column;text-align:center}
+  .reseller-actions{justify-content:center;width:100%}
+}
+
+/* ── Animated Coffee Cup ── */
+.hero-cup-scene{position:absolute;right:6vw;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.cup-wrapper{position:relative;width:320px;height:360px}
+/* Saucer */
+.cup-saucer{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:220px;height:24px;background:linear-gradient(180deg,#3a2a10 0%,#2a1c08 100%);border-radius:50%;box-shadow:0 8px 30px rgba(0,0,0,0.6),inset 0 2px 4px rgba(184,134,11,0.2)}
+/* Cup body */
+.cup-body{position:absolute;bottom:54px;left:50%;transform:translateX(-50%);width:160px;height:130px;background:linear-gradient(160deg,#3d2e12 0%,#2a1e08 50%,#1e1505 100%);border-radius:8px 8px 30px 30px;box-shadow:inset -8px 0 20px rgba(0,0,0,0.4),inset 4px 0 12px rgba(184,134,11,0.08),0 4px 20px rgba(0,0,0,0.5)}
+/* Cup rim */
+.cup-rim{position:absolute;bottom:180px;left:50%;transform:translateX(-50%);width:168px;height:18px;background:linear-gradient(180deg,#4a3818 0%,#3a2a10 100%);border-radius:50%;box-shadow:inset 0 4px 8px rgba(0,0,0,0.5)}
+/* Coffee liquid */
+.cup-liquid{position:absolute;bottom:0;left:6px;right:6px;height:85px;background:linear-gradient(180deg,#1a0f04 0%,#0f0802 100%);border-radius:4px 4px 26px 26px;overflow:hidden}
+.cup-liquid::after{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:radial-gradient(ellipse at center,rgba(101,60,20,0.6) 0%,rgba(60,30,8,0.3) 100%);border-radius:50%}
+/* Handle */
+.cup-handle{position:absolute;right:-28px;bottom:70px;width:36px;height:60px;border:10px solid #3a2a10;border-left:none;border-radius:0 30px 30px 0;box-shadow:inset -2px 0 6px rgba(0,0,0,0.3)}
+/* Steam wisps */
+.steam{position:absolute;bottom:200px;display:flex;gap:20px;left:50%;transform:translateX(-50%)}
+.wisp{width:8px;border-radius:50px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.18) 40%,rgba(255,255,255,0.08) 100%);animation:wisp-rise 3s ease-in-out infinite;transform-origin:bottom center}
+.wisp:nth-child(1){height:70px;animation-delay:0s;animation-duration:2.8s}
+.wisp:nth-child(2){height:90px;animation-delay:0.6s;animation-duration:3.2s}
+.wisp:nth-child(3){height:75px;animation-delay:1.1s;animation-duration:2.6s}
+.wisp:nth-child(4){height:85px;animation-delay:1.7s;animation-duration:3s}
+.wisp:nth-child(5){height:65px;animation-delay:0.3s;animation-duration:2.9s}
+@keyframes wisp-rise{
+  0%{opacity:0;transform:translateY(0) scaleX(1) rotate(-2deg)}
+  20%{opacity:1}
+  60%{opacity:0.6;transform:translateY(-40px) scaleX(1.4) rotate(4deg)}
+  100%{opacity:0;transform:translateY(-80px) scaleX(0.6) rotate(-3deg)}
+}
+/* Ambient glow under cup */
+.cup-glow{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:260px;height:60px;background:radial-gradient(ellipse at center,rgba(184,134,11,0.12) 0%,transparent 70%);border-radius:50%}
+/* Coffee beans scattered */
+.bean{position:absolute;width:14px;height:9px;background:#3d2008;border-radius:50%;box-shadow:inset 1px 1px 2px rgba(0,0,0,0.5)}
+.bean::after{content:'';position:absolute;top:3px;left:2px;right:2px;height:3px;background:rgba(0,0,0,0.3);border-radius:50%}
+.bean-1{bottom:20px;left:30px;transform:rotate(25deg)}
+.bean-2{bottom:26px;left:55px;transform:rotate(-15deg)}
+.bean-3{bottom:15px;right:35px;transform:rotate(40deg)}
+.bean-4{bottom:24px;right:60px;transform:rotate(-30deg)}
+.bean-5{bottom:10px;left:90px;transform:rotate(10deg)}
+/* Plate shine */
+.saucer-shine{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,transparent,rgba(184,134,11,0.25),transparent);border-radius:50%}
+@media(max-width:900px){.hero-cup-scene{display:none}}
 </style>
 </head>
 <body>
@@ -236,7 +306,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <div class="nav-logo-text">AJ's Premium Pure Barako</div>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#story">The Land</a></li>
+    <li><a href="#story">Our Heritage</a></li>
     <li><a href="#benefits">Benefits</a></li>
     <li><a href="#brew">How to Brew</a></li>
     <li><a href="#products">Our Coffee</a></li>
@@ -257,7 +327,31 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <p class="hero-desc">Hindi instant. Totoong kape. Brewed the traditional way for a strong, rich, and satisfying cup. 100% pure &mdash; no additives, no fillers.</p>
     <div class="hero-btns">
       <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
-      <a href="#story" class="btn-secondary">The Land &darr;</a>
+      <a href="#story" class="btn-secondary">Our Heritage &darr;</a>
+    </div>
+  </div>
+  <div class="hero-cup-scene">
+    <div class="cup-wrapper">
+      <div class="cup-glow"></div>
+      <div class="steam">
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+      </div>
+      <div class="cup-rim"></div>
+      <div class="cup-body">
+        <div class="cup-liquid"></div>
+        <div class="cup-handle"></div>
+      </div>
+      <div class="cup-saucer"></div>
+      <div class="saucer-shine"></div>
+      <div class="bean bean-1"></div>
+      <div class="bean bean-2"></div>
+      <div class="bean bean-3"></div>
+      <div class="bean bean-4"></div>
+      <div class="bean bean-5"></div>
     </div>
   </div>
   <div class="hero-badges">
@@ -288,12 +382,30 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   </div>
 </div>
 
+
+<div class="stats-bar">
+  <div class="stats-bar-inner" style="justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+    <div class="stat-item" style="flex:0 0 auto;border:none;text-align:left;padding:0;">
+      <span class="stat-icon" style="text-align:left;display:block;">🤝</span>
+      <div class="stat-number" style="justify-content:flex-start;"><span data-count="10" data-suffix="+">0+</span></div>
+      <div class="stat-label">Retail Partners</div>
+    </div>
+    <div style="flex:1;max-width:520px;display:flex;align-items:center;justify-content:flex-end;gap:0.75rem;flex-wrap:wrap;">
+      <span class="reseller-badge" style="white-space:nowrap;">Open for Resellers</span>
+      <span style="font-size:14px;color:rgba(245,240,232,0.7);">Great pricing for bulk orders &amp; partners.</span>
+      <a href="tel:+639610687484" class="reseller-btn-call">📞 +63 961 068 7484</a>
+      <a href="#contact" class="reseller-btn-msg">Learn More</a>
+    </div>
+  </div>
+</div>
+
+
 <section id="story">
   <div class="story-image"><img src="story.png" alt="Kalinga farmer holding freshly harvested coffee cherries"></div>
   <div class="story-text">
     <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Where It Comes From</div></div>
     <h2 class="section-title reveal">Grown in the<br><em>Highlands of Kalinga.</em></h2>
-    <p class="story-tagline reveal">From mountain to your cup.</p>
+    <p class="story-tagline reveal">From mountain to cup.</p>
     <p class="story-body reveal">Coffee beans thrive in the cool, elevated highlands of Kalinga — one of the few places in the Philippines where they still grow the traditional way. No mass production. No shortcuts. Just farmers who have tended these plants for generations, harvesting each cherry by hand at peak ripeness.</p>
     <p class="story-body reveal">Every bag of AJ's Premium Pure Barako is a direct line from those highlands to your cup — pure, unblended, and unapologetically bold.</p>
     <div class="story-pillars reveal">
@@ -440,7 +552,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
       <div class="footer-tagline">Real Coffee. Real Heritage. Real Good.</div>
     </div>
     <div class="footer-links">
-      <a href="#story">The Land</a>
+      <a href="#story">Our Heritage</a>
       <a href="#benefits">Benefits</a>
       <a href="#brew">How to Brew</a>
       <a href="#products">Our Coffee</a>
@@ -498,6 +610,42 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   });
 
   requestAnimationFrame(step);
+})();
+</script>
+
+<script>
+(function(){
+  function countUp(el, target, duration, suffix) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        start = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(start) + suffix;
+    }, 16);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = '1';
+        const targets = entry.target.querySelectorAll('[data-count]');
+        targets.forEach(el => {
+          const val = parseInt(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          countUp(el, val, 1800, suffix);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const bar = document.querySelector('.stats-bar');
+    if (bar) observer.observe(bar);
+  });
 })();
 </script>
 </body>
