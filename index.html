@@ -6,6 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AJ's Premium Pure Barako — From the Highlands of Kalinga</title>
 <meta name="description" content="100% pure coffee from Kalinga Province. Strong, bold, native brew. No additives. No fillers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ajpremiumpurebarako.com/">
+<meta property="og:title" content="AJ's Premium Pure Barako — Strong. Bold. Native Brew.">
+<meta property="og:description" content="100% pure coffee from the highlands of Kalinga Province. No blends, no additives, no shortcuts. Strong, bold, and freshly roasted — direct to your cup.">
+<meta property="og:image" content="https://www.ajpremiumpurebarako.com/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="AJ's Premium Pure Barako">
+<meta property="og:locale" content="en_PH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AJ's Premium Pure Barako — Strong. Bold. Native Brew.">
+<meta name="twitter:description" content="100% pure coffee from the highlands of Kalinga. No blends, no shortcuts. Just real coffee.">
+<meta name="twitter:image" content="https://www.ajpremiumpurebarako.com/cover.png">
+<meta name="keywords" content="Barako coffee, Kalinga coffee, premium coffee Philippines, native brew, pure coffee, AJ coffee, Zoie Store, Quirino coffee">
+<link rel="canonical" href="https://www.ajpremiumpurebarako.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
@@ -408,9 +423,35 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 #share-btn{position:fixed;bottom:5.5rem;left:1.5rem;z-index:900;width:44px;height:44px;background:rgba(26,18,8,0.9);border:1px solid rgba(212,160,23,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.3);color:var(--gold-light);font-size:18px;text-decoration:none}
 #share-btn:hover{background:var(--forest);transform:scale(1.1)}
 @media(min-width:769px){#share-btn{display:none}}
+
+/* ── FAQ Accordion ── */
+#faq{background:var(--cream);padding:5rem 5vw;text-align:center}
+.faq-list{max-width:700px;margin:2.5rem auto 0;text-align:left}
+.faq-item{border-bottom:1px solid var(--cream-dark);overflow:hidden}
+.faq-item:first-child{border-top:1px solid var(--cream-dark)}
+.faq-question{width:100%;background:none;border:none;padding:1.4rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;font-family:'Lato',sans-serif;font-size:15px;font-weight:700;color:var(--text);text-align:left;transition:color 0.2s}
+.faq-question:hover{color:var(--forest)}
+.faq-question.open{color:var(--forest)}
+.faq-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--forest);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--forest);flex-shrink:0;transition:transform 0.3s,background 0.2s}
+.faq-question.open .faq-icon{transform:rotate(45deg);background:var(--forest);color:var(--white)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s ease}
+.faq-answer.open{max-height:300px}
+.faq-answer-inner{padding:0 0 1.4rem;font-size:14px;line-height:1.9;color:var(--text-muted)}
+.faq-answer-inner strong{color:var(--forest)}
+
+@media(max-width:768px){
+  .testimonials-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;padding:0 5vw 1rem;margin-top:2rem;scrollbar-width:none}
+  .testimonials-grid::-webkit-scrollbar{display:none}
+  .testimonial-card{flex:0 0 85vw;scroll-snap-align:center;max-width:340px}
+}
+
+/* ── Shopee Toast ── */
+#shopee-toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--forest);color:var(--white);padding:12px 24px;border-radius:50px;font-size:14px;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:9000;opacity:0;visibility:hidden;transition:all 0.4s ease;white-space:nowrap;border:1px solid rgba(212,160,23,0.3)}
+#shopee-toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
+<div id="shopee-toast">☕ Redirecting to Shopee — thank you for your support!</div>
 <div id="page-loader">
   <div class="loader-cup">
     <div class="loader-steam"><div class="loader-wisp"></div><div class="loader-wisp"></div><div class="loader-wisp"></div></div>
@@ -431,8 +472,9 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <li><a href="#brew">How to Brew</a></li>
     <li><a href="#products">Our Coffee</a></li>
     <li><a href="#about">About Us</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="nav-cta">🛒 Buy on Shopee</a></li>
+    <li><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link nav-cta">🛒 Buy on Shopee</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
@@ -446,7 +488,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <p class="hero-subtitle">Tapang at lakas na babalik-balikan.</p>
     <p class="hero-desc">Hindi instant. Totoong kape. Brewed the traditional way for a strong, rich, and satisfying cup. 100% pure &mdash; no additives, no fillers.</p>
     <div class="hero-btns">
-      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary">&#128722; Buy on Shopee</a>
+      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link btn-primary">&#128722; Buy on Shopee</a>
       <a href="#story" class="btn-secondary">Our Heritage &darr;</a>
     </div>
   </div>
@@ -532,7 +574,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 
 
 <section id="story">
-  <div class="story-image"><img src="story.png" alt="Kalinga farmer holding freshly harvested coffee cherries"></div>
+  <div class="story-image"><img src="story.png" alt="Kalinga farmer holding freshly harvested coffee cherries" loading="lazy"></div>
   <div class="story-text">
     <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Where It Comes From</div></div>
     <h2 class="section-title reveal">Grown in the<br><em>Highlands of Kalinga.</em></h2>
@@ -572,11 +614,11 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <button class="brew-tab" onclick="switchBrew(4)"><span class="brew-tab-icon">&#127355;</span><span class="brew-tab-label">Espresso<br>Machine</span></button>
   </div>
   <div class="brew-panels reveal">
-    <div class="brew-panel active"><img src="Boiling_process.png" alt="Traditional Boiling" class="brew-panel-img"></div>
-    <div class="brew-panel"><img src="French_Press.png" alt="French Press" class="brew-panel-img"></div>
-    <div class="brew-panel"><img src="Pour_Over.png" alt="Pour Over" class="brew-panel-img"></div>
-    <div class="brew-panel"><img src="Drip_coffee.png" alt="Drip Coffee Maker" class="brew-panel-img"></div>
-    <div class="brew-panel"><img src="Expresso_Machine.png" alt="Espresso Machine" class="brew-panel-img"></div>
+    <div class="brew-panel active"><img loading="lazy" src="Boiling_process.png" alt="Traditional Boiling" class="brew-panel-img"></div>
+    <div class="brew-panel"><img loading="lazy" src="French_Press.png" alt="French Press" class="brew-panel-img"></div>
+    <div class="brew-panel"><img loading="lazy" src="Pour_Over.png" alt="Pour Over" class="brew-panel-img"></div>
+    <div class="brew-panel"><img loading="lazy" src="Drip_coffee.png" alt="Drip Coffee Maker" class="brew-panel-img"></div>
+    <div class="brew-panel"><img loading="lazy" src="Expresso_Machine.png" alt="Espresso Machine" class="brew-panel-img"></div>
   </div>
   <p class="brew-note-text reveal">&#11088; <strong>Recommended:</strong> Traditional Boiling is the classic way to enjoy AJ's Premium Pure Barako &mdash; bold, strong, and authentic.</p>
 </section>
@@ -588,14 +630,14 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   <div class="products-sublabel reveal"><div class="sublabel-line"></div><span>&#128722; Available Online via Shopee</span><div class="sublabel-line"></div></div>
   <div class="products-carousel reveal" id="productCarousel">
     <div class="carousel-track" id="carouselTrack">
-      <div class="product-card"><img src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
-      <div class="product-card"><img src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
-      <div class="product-card"><img src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
-      <div class="product-card"><img src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
-      <div class="product-card"><img src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
-      <div class="product-card"><img src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
-      <div class="product-card"><img src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
-      <div class="product-card"><img src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="250g.png" alt="250g" class="product-img"><div class="product-info"><div class="product-size">250g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Perfect starter pack &mdash; ideal for personal daily use.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="500g.png" alt="500g" class="product-img"><div class="product-info"><div class="product-size">500g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Great for families or regular coffee drinkers.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="750g.png" alt="750g" class="product-img"><div class="product-info"><div class="product-size">750g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">The sweet spot for serious coffee lovers.</div></div></div>
+      <div class="product-card"><img loading="lazy" src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
     </div>
   </div>
   <div class="carousel-dots" id="carouselDots">
@@ -631,13 +673,13 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     </div>
   </div>
 
-  <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
+  <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
   <div class="retail-section reveal">
     <div class="products-sublabel" style="margin-top:3.5rem;"><div class="sublabel-line"></div><span>&#127978; Exclusively at Partner Retail Stores</span><div class="sublabel-line"></div></div>
     <p class="retail-section-desc">Our 50g and 100g trial sizes are exclusively available at our partner retail stores in Quirino Province. Perfect for first-time buyers who want to experience the real flavor before ordering online.</p>
     <div class="retail-cards">
-      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img src="50g.png" alt="50g" class="retail-card-img"><div class="product-info"><div class="product-size">50g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Our smallest pack &mdash; perfect for first-time buyers wanting to try the real experience.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
-      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img src="100g.png" alt="100g" class="retail-card-img"><div class="product-info"><div class="product-size">100g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">A great taster size for true coffee lovers who want to try before ordering online.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
+      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img loading="lazy" src="50g.png" alt="50g" class="retail-card-img"><div class="product-info"><div class="product-size">50g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Our smallest pack &mdash; perfect for first-time buyers wanting to try the real experience.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
+      <div class="retail-card"><div class="retail-store-badge">&#127978; In-Store Only</div><img loading="lazy" src="100g.png" alt="100g" class="retail-card-img"><div class="product-info"><div class="product-size">100g</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">A great taster size for true coffee lovers who want to try before ordering online.</div><div class="retail-availability">&#128205; Partner stores in Quirino Province</div></div></div>
     </div>
     <div class="retail-cta-note">Want to find our partner stores? &nbsp;<a href="https://www.facebook.com/profile.php?id=61577448251116" target="_blank" class="retail-fb-link">Message us on Facebook</a>&nbsp; and we'll direct you to the nearest one.</div>
   </div>
@@ -665,8 +707,8 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <section id="about">
   <div class="about-hero">
     <div class="about-photos">
-      <div class="about-photo"><img src="Family_photo_1.png" alt="The family behind AJ's Barako"></div>
-      <div class="about-photo"><img src="Family_photo_2.png" alt="The family behind AJ's Barako"></div>
+      <div class="about-photo"><img src="Family_photo_1.png" alt="The family behind AJ's Barako" loading="lazy"></div>
+      <div class="about-photo"><img src="Family_photo_2.png" alt="The family behind AJ's Barako" loading="lazy"></div>
     </div>
     <div class="about-photos-overlay"></div>
     <div class="about-hero-content">
@@ -709,16 +751,47 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   </div>
 </section>
 
+<section id="faq">
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Got Questions?</div><div class="eyebrow-line"></div></div>
+  <h2 class="section-title reveal">Frequently Asked<br><em>Questions.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is this instant coffee? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>No — this is 100% pure ground coffee.</strong> AJ's Premium Pure Barako is not instant. It's traditionally brewed by boiling or using a French press, drip maker, or pour over. The real way. The good way.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How do I brew it? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">The classic way is <strong>traditional boiling</strong> — add 1–2 tbsp per cup of water, boil gently for 2–3 minutes, rest, then strain. You can also use a French press, drip coffee maker, or pour over. Check our <a href="#brew" style="color:var(--forest);font-weight:700;">How to Brew</a> section for full guides.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Do you ship nationwide? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>Yes!</strong> We ship anywhere in the Philippines via Shopee. Just place your order online and we'll take care of the rest. The 50g and 100g sizes are currently in-store only at our partner stores in Quirino Province.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is there any additives or fillers? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>Absolutely none.</strong> Pure ground coffee beans — nothing added, nothing removed. No sugar, no creamer, no blends. Just real coffee exactly as it should be.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How long does it stay fresh? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Each bag has a <strong>shelf life of 12 months</strong> from the roast date (printed on every pack). Store in a cool, dry place away from sunlight. Once opened, seal tightly and consume within 4–6 weeks for best flavor.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can I become a reseller or retail partner? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>Yes, we're open for resellers!</strong> We offer great pricing for bulk orders and retail partnerships. Call or message us at <strong>+63 961 068 7484</strong> or visit our <a href="#contact" style="color:var(--forest);font-weight:700;">Contact</a> section for details.</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Get in Touch</div><div class="eyebrow-line"></div></div>
   <h2 class="section-title reveal">Order Now or<br><em>Say Hello.</em></h2>
   <p class="contact-desc reveal">Find us on Shopee or reach out through our Facebook page. We'd love to hear from you!</p>
   <div class="contact-cards reveal">
-    <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="contact-card"><div class="contact-card-icon">&#128722;</div><div class="contact-card-label">Order Online</div><div class="contact-card-value">Shop on Shopee</div></a>
+    <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link contact-card"><div class="contact-card-icon">&#128722;</div><div class="contact-card-label">Order Online</div><div class="contact-card-value">Shop on Shopee</div></a>
     <a href="https://www.facebook.com/profile.php?id=61577448251116" target="_blank" class="contact-card"><div class="contact-card-icon">&#128216;</div><div class="contact-card-label">Facebook Page</div><div class="contact-card-value">AJ's Premium Pure Barako</div></a>
     <a href="https://www.facebook.com/profile.php?id=61577448251116" target="_blank" class="contact-card"><div class="contact-card-icon">&#128205;</div><div class="contact-card-label">Store Location</div><div class="contact-card-value">Maddela Public Market</div></a>
   </div>
-  <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; Buy Now on Shopee</a>
+  <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link btn-primary" style="display:inline-flex;">&#128722; Buy Now on Shopee</a>
 </section>
 
 
@@ -746,7 +819,7 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 </div>
 <div id="sticky-buy">
   <div class="sticky-buy-text"><strong>AJ's Premium Pure Barako</strong>Fresh from Kalinga · Free to order</div>
-  <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="sticky-buy-btn">🛒 Buy on Shopee</a>
+  <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="shopee-link sticky-buy-btn">🛒 Buy on Shopee</a>
   <button class="sticky-buy-close" onclick="this.parentElement.remove()">×</button>
 </div>
 <a id="share-btn" title="Share this page">🔗</a>
@@ -763,7 +836,8 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
       <a href="#brew">How to Brew</a>
       <a href="#products">Our Coffee</a>
       <a href="#about">About Us</a>
-      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank">Buy on Shopee</a>
+      <a href="#faq">FAQ</a>
+      <a class="shopee-link" href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank">Buy on Shopee</a>
       <a href="https://www.facebook.com/profile.php?id=61577448251116" target="_blank">Facebook</a>
     </div>
   </div>
@@ -977,6 +1051,35 @@ function updateCalc(){
   document.getElementById('calcResult').innerHTML =
     'At <strong>' + calcCupsVal + ' cup' + (calcCupsVal>1?'s':'') + '/day</strong>, a <strong>' + best.w + '</strong> bag lasts about <strong>' + daysLow + '–' + daysHigh + ' days</strong>. ' + best.desc;
 }
+</script>
+
+
+<script>
+// ── FAQ Accordion ─────────────────────────────────────────────────
+function toggleFaq(btn){
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.classList.remove('open');
+    q.nextElementSibling.classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if(!isOpen){
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// ── Shopee Toast ──────────────────────────────────────────────────
+document.querySelectorAll('.shopee-link').forEach(link => {
+  link.addEventListener('click', function(){
+    const toast = document.getElementById('shopee-toast');
+    if(!toast) return;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  });
+});
 </script>
 
 </body>
