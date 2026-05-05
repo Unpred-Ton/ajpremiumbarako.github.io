@@ -314,6 +314,19 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
   .hero-overlay{background:rgba(15,10,5,0.45)}
   .hero-badges{bottom:1.5rem;right:3vw}
 }
+
+@media(max-width:768px){
+  .products-carousel{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;cursor:grab;scrollbar-width:none}
+  .products-carousel::-webkit-scrollbar{display:none}
+  .carousel-track{display:flex;gap:1rem;transition:none;transform:none!important;animation:none!important;width:max-content;padding:0 5vw}
+  .product-card{flex:0 0 75vw;max-width:300px;scroll-snap-align:center}
+  .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:1.2rem}
+  .carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--cream-dark);border:none;padding:0;cursor:pointer;transition:background 0.2s,transform 0.2s}
+  .carousel-dot.active{background:var(--forest);transform:scale(1.3)}
+}
+@media(min-width:769px){
+  .carousel-dots{display:none}
+}
 </style>
 </head>
 <body>
@@ -495,6 +508,12 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
       <div class="product-card"><img src="1kg.png" alt="1kg" class="product-img"><div class="product-info"><div class="product-size">1kg</div><div class="product-name">AJ's Premium Pure Barako</div><div class="product-desc">Best value. Bulk size for the household or gifting.</div></div></div>
     </div>
   </div>
+  <div class="carousel-dots" id="carouselDots">
+    <button class="carousel-dot active" data-index="0"></button>
+    <button class="carousel-dot" data-index="1"></button>
+    <button class="carousel-dot" data-index="2"></button>
+    <button class="carousel-dot" data-index="3"></button>
+  </div>
   <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
   <div class="retail-section reveal">
     <div class="products-sublabel" style="margin-top:3.5rem;"><div class="sublabel-line"></div><span>&#127978; Exclusively at Partner Retail Stores</span><div class="sublabel-line"></div></div>
@@ -610,14 +629,20 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // Carousel
 (function(){
+  const carousel = document.getElementById('productCarousel');
   const track = document.getElementById('carouselTrack');
+  const dots = document.querySelectorAll('.carousel-dot');
   if(!track) return;
+
+  const isMobile = () => window.innerWidth <= 768;
+
+  // ── Desktop: auto-scroll ──────────────────────────────────────────────
   let pos = 0;
   let paused = false;
   const speed = 0.6;
 
   function step(){
-    if(!paused){
+    if(!isMobile() && !paused){
       pos += speed;
       const cards = track.querySelectorAll('.product-card');
       const cardW = cards[0].offsetWidth + 19;
@@ -633,11 +658,47 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   });
   track.addEventListener('mouseleave', function(){ paused = false; });
   track.addEventListener('mouseover', function(e){
-    const card = e.target.closest('.product-card');
-    if(card){ paused = true; }
+    if(e.target.closest('.product-card')) paused = true;
   });
 
   requestAnimationFrame(step);
+
+  // ── Mobile: touch swipe + dot indicators ─────────────────────────────
+  let touchStartX = 0;
+  let touchStartScroll = 0;
+  let activeIndex = 0;
+
+  function updateDots(index){
+    activeIndex = index;
+    dots.forEach((d,i) => d.classList.toggle('active', i === index));
+  }
+
+  // Update dot on scroll (snap scroll settles on a card)
+  if(carousel){
+    carousel.addEventListener('scroll', function(){
+      if(!isMobile()) return;
+      const cards = track.querySelectorAll('.product-card');
+      const cardW = cards[0] ? cards[0].offsetWidth + 16 : 1;
+      const scrollLeft = carousel.scrollLeft;
+      const idx = Math.round((scrollLeft - carousel.offsetWidth * 0.05 * 0) / cardW);
+      updateDots(Math.max(0, Math.min(idx, dots.length - 1)));
+    }, {passive:true});
+  }
+
+  // Dot click — scroll to card
+  dots.forEach(dot => {
+    dot.addEventListener('click', function(){
+      if(!isMobile()) return;
+      const idx = parseInt(this.dataset.index);
+      const cards = track.querySelectorAll('.product-card');
+      const card = cards[idx];
+      if(card && carousel){
+        const offset = card.offsetLeft - (carousel.offsetWidth - card.offsetWidth) / 2;
+        carousel.scrollTo({left: offset, behavior:'smooth'});
+      }
+      updateDots(idx);
+    });
+  });
 })();
 </script>
 
