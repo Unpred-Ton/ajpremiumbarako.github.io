@@ -327,9 +327,99 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 @media(min-width:769px){
   .carousel-dots{display:none}
 }
+
+/* ── Scroll Progress Bar ── */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:9999;transition:width 0.1s linear;border-radius:0 2px 2px 0}
+
+/* ── Page Loader ── */
+#page-loader{position:fixed;inset:0;background:var(--dark);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity 0.5s ease,visibility 0.5s ease}
+#page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-cup{position:relative;width:60px;height:50px}
+.loader-cup-body{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:44px;height:36px;border:3px solid var(--gold);border-radius:4px 4px 12px 12px}
+.loader-cup-handle{position:absolute;right:-12px;bottom:8px;width:12px;height:20px;border:3px solid var(--gold);border-left:none;border-radius:0 10px 10px 0}
+.loader-fill{position:absolute;bottom:3px;left:3px;right:3px;height:0%;background:linear-gradient(180deg,var(--gold-light),var(--gold));border-radius:2px 2px 10px 10px;animation:fill-up 1.8s ease-in-out forwards}
+@keyframes fill-up{0%{height:0%}100%{height:85%}}
+.loader-steam{position:absolute;top:-20px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.loader-wisp{width:4px;height:14px;border-radius:50px;background:rgba(212,160,23,0.5);animation:wisp-rise 1.5s ease-in-out infinite}
+.loader-wisp:nth-child(2){animation-delay:0.3s}
+.loader-wisp:nth-child(3){animation-delay:0.6s}
+.loader-text{font-family:'Dancing Script',cursive;font-size:1.3rem;color:rgba(212,160,23,0.8);letter-spacing:1px}
+
+/* ── Back to Top ── */
+#back-to-top{position:fixed;bottom:5.5rem;right:1.5rem;z-index:900;width:44px;height:44px;background:var(--forest);border:1px solid rgba(212,160,23,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.3);color:var(--white);font-size:18px;text-decoration:none}
+#back-to-top.visible{opacity:1;visibility:visible}
+#back-to-top:hover{background:var(--forest-light);transform:translateY(-3px)}
+
+/* ── Floating Action Buttons (WhatsApp + Messenger) ── */
+#fab-group{position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem}
+.fab-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.35);transition:transform 0.2s,box-shadow 0.2s;font-size:22px}
+.fab-btn:hover{transform:scale(1.12);box-shadow:0 6px 24px rgba(0,0,0,0.4)}
+.fab-wa{background:#25D366}
+.fab-fb{background:#0084FF}
+.fab-label{position:absolute;right:60px;background:rgba(26,18,8,0.92);color:var(--white);font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.fab-btn:hover .fab-label{opacity:1}
+
+/* ── Sticky Mobile Buy Bar ── */
+#sticky-buy{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--forest);border-top:1px solid rgba(212,160,23,0.3);padding:0.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 20px rgba(0,0,0,0.3)}
+#sticky-buy.visible{transform:translateY(0)}
+.sticky-buy-text{font-size:13px;color:rgba(245,240,232,0.8);line-height:1.3}
+.sticky-buy-text strong{color:var(--white);display:block;font-size:15px}
+.sticky-buy-btn{background:var(--gold);color:var(--dark);font-size:13px;font-weight:700;padding:10px 20px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s}
+.sticky-buy-btn:hover{background:var(--gold-light)}
+.sticky-buy-close{background:none;border:none;color:rgba(245,240,232,0.5);font-size:20px;cursor:pointer;padding:0 0 0 0.5rem;line-height:1;flex-shrink:0}
+@media(min-width:769px){#sticky-buy{display:none}}
+
+/* ── Testimonials ── */
+#testimonials{background:var(--dark);padding:5rem 5vw;text-align:center}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem;max-width:1000px;margin-left:auto;margin-right:auto}
+.testimonial-card{background:rgba(255,255,255,0.04);border:1px solid rgba(184,134,11,0.2);border-radius:12px;padding:2rem;text-align:left;transition:border-color 0.2s,background 0.2s;position:relative}
+.testimonial-card:hover{border-color:rgba(184,134,11,0.45);background:rgba(255,255,255,0.07)}
+.testimonial-stars{color:var(--gold-light);font-size:16px;margin-bottom:1rem;letter-spacing:2px}
+.testimonial-text{font-size:15px;line-height:1.8;color:rgba(245,240,232,0.78);font-style:italic;margin-bottom:1.5rem;font-weight:300}
+.testimonial-author{display:flex;align-items:center;gap:0.75rem}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid rgba(212,160,23,0.3)}
+.testimonial-name{font-size:13px;font-weight:700;color:var(--white)}
+.testimonial-location{font-size:11px;color:rgba(245,240,232,0.45);letter-spacing:1px;text-transform:uppercase}
+.testimonial-quote-mark{position:absolute;top:1.2rem;right:1.5rem;font-size:3.5rem;color:rgba(184,134,11,0.1);font-family:Georgia,serif;line-height:1}
+
+/* ── Size Guide ── */
+.size-guide{margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto}
+.size-guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1.5rem}
+.size-card{background:var(--white);border:1.5px solid var(--cream-dark);border-radius:10px;padding:1.2rem 1rem;text-align:center;transition:border-color 0.2s,box-shadow 0.2s}
+.size-card:hover{border-color:var(--forest);box-shadow:0 4px 16px rgba(44,74,46,0.12)}
+.size-card-weight{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--forest)}
+.size-card-cups{font-size:12px;color:var(--text-muted);margin:0.3rem 0;line-height:1.4}
+.size-card-who{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:0.5rem}
+.size-card.highlight{border-color:var(--forest);background:linear-gradient(135deg,#f0f5f0,#fff);box-shadow:0 4px 20px rgba(44,74,46,0.15)}
+
+/* ── Brewing Calculator ── */
+.brew-calc{background:var(--cream-dark);border-radius:12px;padding:2rem;max-width:500px;margin:2.5rem auto 0;border:1px solid rgba(44,74,46,0.15)}
+.brew-calc-title{font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--forest);margin-bottom:1.2rem}
+.brew-calc-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.brew-calc-label{font-size:14px;color:var(--text-muted)}
+.brew-calc-control{display:flex;align-items:center;gap:0.5rem}
+.brew-calc-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--forest);background:transparent;color:var(--forest);font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;line-height:1}
+.brew-calc-btn:hover{background:var(--forest);color:var(--white)}
+.brew-calc-val{font-size:16px;font-weight:700;color:var(--text);min-width:28px;text-align:center}
+.brew-calc-result{background:var(--forest);border-radius:8px;padding:1rem 1.5rem;color:var(--white);font-size:14px;line-height:1.7;margin-top:0.5rem}
+.brew-calc-result strong{color:var(--gold-light);font-size:16px}
+
+/* ── Share Button ── */
+#share-btn{position:fixed;bottom:5.5rem;left:1.5rem;z-index:900;width:44px;height:44px;background:rgba(26,18,8,0.9);border:1px solid rgba(212,160,23,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.3);color:var(--gold-light);font-size:18px;text-decoration:none}
+#share-btn:hover{background:var(--forest);transform:scale(1.1)}
+@media(min-width:769px){#share-btn{display:none}}
 </style>
 </head>
 <body>
+<div id="page-loader">
+  <div class="loader-cup">
+    <div class="loader-steam"><div class="loader-wisp"></div><div class="loader-wisp"></div><div class="loader-wisp"></div></div>
+    <div class="loader-cup-body"><div class="loader-fill"></div></div>
+    <div class="loader-cup-handle"></div>
+  </div>
+  <div class="loader-text">Brewing something good...</div>
+</div>
+<div id="scroll-progress"></div>
 <nav>
   <a href="#hero" class="nav-logo">
     <div class="nav-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 8h1a4 4 0 0 1 0 8h-1" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 1v3M10 1v3M14 1v3" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/></svg></div>
@@ -514,6 +604,33 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     <button class="carousel-dot" data-index="2"></button>
     <button class="carousel-dot" data-index="3"></button>
   </div>
+
+  <div class="size-guide reveal">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:0.5rem;"><div class="eyebrow-line"></div><div class="eyebrow-text">Which Size is Right for You?</div><div class="eyebrow-line"></div></div>
+    <div class="size-guide-grid">
+      <div class="size-card"><div class="size-card-weight">50g</div><div class="size-card-cups">~5–7 cups</div><div class="size-card-who">First Timer</div></div>
+      <div class="size-card"><div class="size-card-weight">100g</div><div class="size-card-cups">~10–14 cups</div><div class="size-card-who">Try It Out</div></div>
+      <div class="size-card"><div class="size-card-weight">250g</div><div class="size-card-cups">~25–35 cups</div><div class="size-card-who">Daily Drinker</div></div>
+      <div class="size-card highlight"><div class="size-card-weight">500g</div><div class="size-card-cups">~50–70 cups</div><div class="size-card-who">⭐ Best Value</div></div>
+      <div class="size-card"><div class="size-card-weight">750g</div><div class="size-card-cups">~75–100 cups</div><div class="size-card-who">Coffee Lover</div></div>
+      <div class="size-card"><div class="size-card-weight">1kg</div><div class="size-card-cups">~100–140 cups</div><div class="size-card-who">Household/Bulk</div></div>
+    </div>
+    <div class="brew-calc">
+      <div class="brew-calc-title">☕ Brewing Calculator</div>
+      <div class="brew-calc-row">
+        <span class="brew-calc-label">Cups per day</span>
+        <div class="brew-calc-control">
+          <button class="brew-calc-btn" onclick="calcAdjust(-1)">−</button>
+          <span class="brew-calc-val" id="calcCups">2</span>
+          <button class="brew-calc-btn" onclick="calcAdjust(1)">+</button>
+        </div>
+      </div>
+      <div class="brew-calc-result" id="calcResult">
+        At <strong>2 cups/day</strong>, a <strong>250g</strong> bag lasts about <strong>12–17 days</strong>. Perfect for a personal daily brew.
+      </div>
+    </div>
+  </div>
+
   <div class="products-cta reveal"><a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-primary" style="display:inline-flex;">&#128722; View All on Shopee</a></div>
   <div class="retail-section reveal">
     <div class="products-sublabel" style="margin-top:3.5rem;"><div class="sublabel-line"></div><span>&#127978; Exclusively at Partner Retail Stores</span><div class="sublabel-line"></div></div>
@@ -567,6 +684,31 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
     </div>
 </section>
 
+<section id="testimonials">
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">What People Are Saying</div><div class="eyebrow-line"></div></div>
+  <h2 class="section-title reveal" style="color:var(--white);">Real Customers,<br><em>Real Reviews.</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote-mark">"</div>
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">Grabe ang lakas ng kape nito! Hindi ako makapaniwala na ganito pala ang tunay na kape ng Kalinga. Sobrang sulit at masarap. Hindi na ako bibili ng iba.</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">☕</div><div><div class="testimonial-name">Maria S.</div><div class="testimonial-location">Quirino Province</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote-mark">"</div>
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">First time ko matikman ang coffee na ganito kadense at kanatural. No sugar needed — the flavor speaks for itself. Will definitely order again!</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">🌿</div><div><div class="testimonial-name">Carlo R.</div><div class="testimonial-location">Nueva Vizcaya</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote-mark">"</div>
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">Ang ganda ng packaging at ang bango pa ng kape. Nagpadala ako sa Manila para sa family ko at lahat sila nagustuhan. Legit na kape ito, hindi peke.</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">🏔️</div><div><div class="testimonial-name">Jessa M.</div><div class="testimonial-location">Manila</div></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Get in Touch</div><div class="eyebrow-line"></div></div>
   <h2 class="section-title reveal">Order Now or<br><em>Say Hello.</em></h2>
@@ -591,6 +733,23 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 
 
 
+
+<a href="#hero" id="back-to-top" title="Back to top">↑</a>
+
+<div id="fab-group">
+  <a href="https://wa.me/639610687484" target="_blank" class="fab-btn fab-wa" title="Chat on WhatsApp">
+    <span class="fab-label">WhatsApp</span>💬
+  </a>
+  <a href="https://m.me/61577448251116" target="_blank" class="fab-btn fab-fb" title="Message on Facebook">
+    <span class="fab-label">Messenger</span>📨
+  </a>
+</div>
+<div id="sticky-buy">
+  <div class="sticky-buy-text"><strong>AJ's Premium Pure Barako</strong>Fresh from Kalinga · Free to order</div>
+  <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="sticky-buy-btn">🛒 Buy on Shopee</a>
+  <button class="sticky-buy-close" onclick="this.parentElement.remove()">×</button>
+</div>
+<a id="share-btn" title="Share this page">🔗</a>
 
 <footer>
   <div class="footer-top">
@@ -737,5 +896,88 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   });
 })();
 </script>
+
+<script>
+// ── Page Loader ───────────────────────────────────────────────────
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    document.getElementById('page-loader').classList.add('hidden');
+  }, 2000);
+});
+
+// ── Scroll Progress Bar ───────────────────────────────────────────
+window.addEventListener('scroll', function(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+
+  // Back to top visibility
+  const btt = document.getElementById('back-to-top');
+  if(scrollTop > 400) btt.classList.add('visible');
+  else btt.classList.remove('visible');
+
+  // Sticky buy bar (mobile only, after hero)
+  const sticky = document.getElementById('sticky-buy');
+  if(sticky){
+    const hero = document.getElementById('hero');
+    if(hero && scrollTop > hero.offsetHeight) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  }
+}, {passive:true});
+
+// ── Share Button ──────────────────────────────────────────────────
+const shareBtn = document.getElementById('share-btn');
+if(shareBtn){
+  shareBtn.addEventListener('click', async function(){
+    if(navigator.share){
+      try{
+        await navigator.share({
+          title: "AJ's Premium Pure Barako",
+          text: "Strong. Bold. Native Brew. Fresh from Kalinga Province — check this out!",
+          url: window.location.href
+        });
+      }catch(e){}
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      shareBtn.textContent = '✓';
+      setTimeout(()=>{ shareBtn.textContent = '🔗'; }, 2000);
+    }
+  });
+}
+
+// ── Brewing Calculator ────────────────────────────────────────────
+let calcCupsVal = 2;
+const sizes = [
+  {w:'50g',  low:5,  high:7,   desc:'Perfect for a first-time try.'},
+  {w:'100g', low:10, high:14,  desc:'Great for a short trial run.'},
+  {w:'250g', low:25, high:35,  desc:'Perfect for a personal daily brew.'},
+  {w:'500g', low:50, high:70,  desc:'Great for daily drinkers or couples.'},
+  {w:'750g', low:75, high:100, desc:'Ideal for serious coffee lovers.'},
+  {w:'1kg',  low:100,high:140, desc:'Best for households or bulk buyers.'},
+];
+
+function calcAdjust(delta){
+  calcCupsVal = Math.max(1, Math.min(10, calcCupsVal + delta));
+  document.getElementById('calcCups').textContent = calcCupsVal;
+  updateCalc();
+}
+
+function updateCalc(){
+  // Find best size (lasts 10–30 days ideally)
+  let best = sizes[2];
+  for(let s of sizes){
+    const avgCups = (s.low + s.high) / 2;
+    const days = avgCups / calcCupsVal;
+    if(days >= 10 && days <= 35){ best = s; break; }
+  }
+  const avgCups = (best.low + best.high) / 2;
+  const daysLow = Math.round(best.low / calcCupsVal);
+  const daysHigh = Math.round(best.high / calcCupsVal);
+  document.getElementById('calcResult').innerHTML =
+    'At <strong>' + calcCupsVal + ' cup' + (calcCupsVal>1?'s':'') + '/day</strong>, a <strong>' + best.w + '</strong> bag lasts about <strong>' + daysLow + '–' + daysHigh + ' days</strong>. ' + best.desc;
+}
+</script>
+
 </body>
 </html>
