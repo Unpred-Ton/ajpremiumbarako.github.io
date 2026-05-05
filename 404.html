@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — AJ's Premium Pure Barako</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#1a1208;--forest:#2c4a2e;--forest-light:#3d6b40;--gold:#b8860b;--gold-light:#d4a017;--cream:#f5f0e8;--white:#fefcf8}
+html,body{height:100%}
+body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:2rem;overflow:hidden}
+
+/* Animated cup */
+.cup-scene{position:relative;width:140px;height:160px;margin:0 auto 2.5rem}
+.cup-saucer{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:120px;height:14px;background:linear-gradient(180deg,#6b4a1a,#4a3010);border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
+.cup-body{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:88px;height:72px;background:linear-gradient(160deg,#6b4a1a,#2a1c08);border-radius:6px 6px 22px 22px;box-shadow:inset -6px 0 16px rgba(0,0,0,0.3)}
+.cup-rim{position:absolute;bottom:94px;left:50%;transform:translateX(-50%);width:94px;height:12px;background:linear-gradient(180deg,#8a6a28,#5a4018);border-radius:50%}
+.cup-liquid{position:absolute;bottom:0;left:5px;right:5px;height:50px;background:linear-gradient(180deg,#2a1505,#0f0802);border-radius:4px 4px 18px 18px}
+.cup-handle{position:absolute;right:-18px;bottom:30px;width:22px;height:36px;border:8px solid #6b4a1a;border-left:none;border-radius:0 18px 18px 0}
+.steam{position:absolute;bottom:108px;display:flex;gap:10px;left:50%;transform:translateX(-50%)}
+.wisp{width:6px;border-radius:50px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,0.3),rgba(255,255,255,0.1));animation:wisp-rise 2.8s ease-in-out infinite;transform-origin:bottom center}
+.wisp:nth-child(1){height:45px;animation-delay:0s}
+.wisp:nth-child(2){height:58px;animation-delay:0.5s;animation-duration:3.1s}
+.wisp:nth-child(3){height:48px;animation-delay:1s;animation-duration:2.6s}
+@keyframes wisp-rise{
+  0%{opacity:0;transform:translateY(0) scaleX(1)}
+  20%{opacity:1}
+  60%{opacity:0.6;transform:translateY(-28px) scaleX(1.5)}
+  100%{opacity:0;transform:translateY(-55px) scaleX(0.5)}
+}
+.cup-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;height:40px;background:radial-gradient(ellipse at center,rgba(184,134,11,0.18),transparent 70%);border-radius:50%}
+
+/* 404 text */
+.error-code{font-family:'Playfair Display',serif;font-size:clamp(5rem,20vw,9rem);font-weight:900;line-height:1;color:rgba(184,134,11,0.15);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;user-select:none;white-space:nowrap}
+.content{position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:1rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:var(--white);line-height:1.2;margin-bottom:0.75rem}
+h1 em{color:var(--gold-light);font-style:italic}
+.script{font-family:'Dancing Script',cursive;font-size:clamp(1.1rem,2.5vw,1.4rem);color:rgba(245,240,232,0.6);margin-bottom:2rem;display:block}
+p{font-size:15px;color:rgba(245,240,232,0.55);line-height:1.8;max-width:400px;margin:0 auto 2.5rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:var(--white);text-decoration:none;padding:14px 28px;border-radius:6px;font-size:14px;font-weight:700;border:1px solid var(--forest-light);transition:all 0.2s;margin-right:0.75rem;margin-bottom:0.75rem}
+.btn-home:hover{background:var(--forest-light);transform:translateY(-2px)}
+.btn-shopee{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--gold-light);text-decoration:none;padding:14px 28px;border-radius:6px;font-size:14px;font-weight:600;border:1px solid rgba(184,134,11,0.4);transition:all 0.2s;margin-bottom:0.75rem}
+.btn-shopee:hover{background:rgba(184,134,11,0.1);border-color:var(--gold-light)}
+.footer-note{margin-top:3rem;font-size:11px;color:rgba(245,240,232,0.2);letter-spacing:1px;text-transform:uppercase}
+
+/* Background beans */
+.bg-bean{position:fixed;width:12px;height:8px;background:rgba(184,134,11,0.06);border-radius:50%;pointer-events:none}
+</style>
+</head>
+<body>
+
+<!-- Scattered background beans -->
+<div class="bg-bean" style="top:10%;left:8%;transform:rotate(20deg)"></div>
+<div class="bg-bean" style="top:20%;right:12%;transform:rotate(-35deg)"></div>
+<div class="bg-bean" style="bottom:25%;left:15%;transform:rotate(50deg)"></div>
+<div class="bg-bean" style="bottom:15%;right:8%;transform:rotate(-15deg)"></div>
+<div class="bg-bean" style="top:60%;left:5%;transform:rotate(30deg)"></div>
+<div class="bg-bean" style="top:40%;right:5%;transform:rotate(-40deg)"></div>
+
+<div style="position:relative;width:100%;max-width:600px;">
+  <div class="error-code">404</div>
+  <div class="content">
+
+    <!-- Animated cup -->
+    <div class="cup-scene">
+      <div class="cup-glow"></div>
+      <div class="steam">
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+        <div class="wisp"></div>
+      </div>
+      <div class="cup-rim"></div>
+      <div class="cup-body">
+        <div class="cup-liquid"></div>
+        <div class="cup-handle"></div>
+      </div>
+      <div class="cup-saucer"></div>
+    </div>
+
+    <div class="eyebrow">Oops — Page Not Found</div>
+    <h1>Looks like this page<br><em>spilled its coffee.</em></h1>
+    <span class="script">"Tapang at lakas na babalik-balikan."</span>
+    <p>The page you're looking for doesn't exist or may have been moved. But the coffee is still good — let's get you back on track.</p>
+
+    <div>
+      <a href="/" class="btn-home">🏠 Back to Home</a>
+      <a href="https://shopee.ph/Kalinga-Premium-Ground-Coffee-AJs-Premium-Pure-Barako-i.1809020944.45459588280?extraParams=%7B%22display_model_id%22%3A415845776344%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="btn-shopee">🛒 Buy on Shopee</a>
+    </div>
+
+    <div class="footer-note">AJ's Premium Pure Barako · Fresh from Kalinga Province</div>
+  </div>
+</div>
+
+</body>
+</html>
