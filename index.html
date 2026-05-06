@@ -483,6 +483,27 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 .cookie-btn-decline{background:transparent;color:rgba(245,240,232,0.5);border:1px solid rgba(255,255,255,0.15);padding:9px 16px;border-radius:6px;font-size:13px;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif}
 .cookie-btn-decline:hover{color:rgba(245,240,232,0.8);border-color:rgba(255,255,255,0.3)}
 @media(max-width:640px){#cookie-notice{flex-direction:column;text-align:center}.cookie-actions{justify-content:center;width:100%}}
+
+/* ── Before Ordering Panel ── */
+.before-ordering{max-width:700px;margin:0 auto 2.5rem;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12);cursor:pointer}
+.before-ordering-img{width:100%;display:block;transition:transform 0.3s ease}
+.before-ordering:hover .before-ordering-img{transform:scale(1.01)}
+.before-ordering-toggle{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--forest);color:var(--white);padding:0.85rem 1.5rem;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;width:100%;cursor:pointer;font-family:'Lato',sans-serif;transition:background 0.2s}
+.before-ordering-toggle:hover{background:var(--forest-light)}
+.before-ordering-toggle .toggle-icon{transition:transform 0.3s;font-size:16px}
+.before-ordering-toggle.open .toggle-icon{transform:rotate(180deg)}
+.before-ordering-body{max-height:0;overflow:hidden;transition:max-height 0.5s ease}
+.before-ordering-body.open{max-height:2000px}
+
+/* ── Before Ordering Panel ── */
+.before-ordering{max-width:700px;margin:0 auto 2.5rem;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+.before-ordering-toggle{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--forest);color:var(--white);padding:0.85rem 1.5rem;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;width:100%;cursor:pointer;font-family:'Lato',sans-serif;transition:background 0.2s}
+.before-ordering-toggle:hover{background:var(--forest-light)}
+.before-ordering-toggle .toggle-icon{transition:transform 0.3s;font-size:16px;display:inline-block}
+.before-ordering-toggle.open .toggle-icon{transform:rotate(180deg)}
+.before-ordering-body{max-height:0;overflow:hidden;transition:max-height 0.5s ease}
+.before-ordering-body.open{max-height:3000px}
+.before-ordering-body img{width:100%;display:block}
 </style>
 <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -648,7 +669,15 @@ footer{background:#0d0b06;padding:3rem 5vw 2rem;border-top:1px solid rgba(184,13
 <section id="brew">
   <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><div class="eyebrow-text">Brewing Methods</div></div>
   <h2 class="section-title reveal">How to Brew<br><em>the Right Way.</em></h2>
-  <p class="brew-intro reveal">AJ's Premium Pure Barako works beautifully with multiple brewing methods. Choose your style &mdash; each brings out a unique character of the bold, native flavor.</p>
+  <p class="brew-intro reveal">Our coffee works beautifully with multiple brewing methods. Choose your style &mdash; each brings out a unique character of the bold, native flavor.</p>
+  <div class="before-ordering reveal">
+    <button class="before-ordering-toggle" id="beforeOrderingToggle" onclick="toggleBeforeOrdering()">
+      💡 Before You Order &mdash; Read This First <span class="toggle-icon">&#9660;</span>
+    </button>
+    <div class="before-ordering-body" id="beforeOrderingBody">
+      <img src="Before_Ordering.png" alt="Before Ordering Grind Size Guide" loading="lazy">
+    </div>
+  </div>
   <div class="brew-tabs reveal">
     <button class="brew-tab active" onclick="switchBrew(0)"><span class="brew-tab-icon">&#128293;</span><span class="brew-tab-label">Traditional<br>Boiling</span></button>
     <button class="brew-tab" onclick="switchBrew(1)"><span class="brew-tab-icon">&#9749;</span><span class="brew-tab-label">French<br>Press</span></button>
@@ -1194,5 +1223,24 @@ function declineCookies(){
 }
 </script>
 
+
+<script>
+function toggleBeforeOrdering(){
+  const body = document.getElementById('beforeOrderingBody');
+  const btn = document.getElementById('beforeOrderingToggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+</script>
+
+<script>
+function toggleBeforeOrdering(){
+  const body = document.getElementById('beforeOrderingBody');
+  const btn = document.getElementById('beforeOrderingToggle');
+  body.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+</script>
 </body>
 </html>
