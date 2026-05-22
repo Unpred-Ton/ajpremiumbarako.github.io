@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.ajpremiumpurebarako.com/sitemap.xml
